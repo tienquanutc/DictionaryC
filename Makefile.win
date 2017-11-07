@@ -1,0 +1,52 @@
+# Project: DictionarySample
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Dictionary/Dictionary.o Dictionary/Word.o Program/Program.o main.o Resources/Constants.o Resources/Language.o Utils/Console.o Utils/IntergerParser.o Utils/GetString.o
+LINKOBJ  = Dictionary/Dictionary.o Dictionary/Word.o Program/Program.o main.o Resources/Constants.o Resources/Language.o Utils/Console.o Utils/IntergerParser.o Utils/GetString.o
+LIBS     = -L"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/lib" -L"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/include" -I"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/include" -I"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/APP_INSTALL_LOCATION/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Dictionary.exe
+CXXFLAGS = $(CXXINCS) -g3 -std=c++11
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Dictionary/Dictionary.o: Dictionary/Dictionary.cpp
+	$(CPP) -c Dictionary/Dictionary.cpp -o Dictionary/Dictionary.o $(CXXFLAGS)
+
+Dictionary/Word.o: Dictionary/Word.cpp
+	$(CPP) -c Dictionary/Word.cpp -o Dictionary/Word.o $(CXXFLAGS)
+
+Program/Program.o: Program/Program.cpp
+	$(CPP) -c Program/Program.cpp -o Program/Program.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Resources/Constants.o: Resources/Constants.cpp
+	$(CPP) -c Resources/Constants.cpp -o Resources/Constants.o $(CXXFLAGS)
+
+Resources/Language.o: Resources/Language.cpp
+	$(CPP) -c Resources/Language.cpp -o Resources/Language.o $(CXXFLAGS)
+
+Utils/Console.o: Utils/Console.cpp
+	$(CPP) -c Utils/Console.cpp -o Utils/Console.o $(CXXFLAGS)
+
+Utils/IntergerParser.o: Utils/IntergerParser.cpp
+	$(CPP) -c Utils/IntergerParser.cpp -o Utils/IntergerParser.o $(CXXFLAGS)
+
+Utils/GetString.o: Utils/GetString.cpp
+	$(CPP) -c Utils/GetString.cpp -o Utils/GetString.o $(CXXFLAGS)
