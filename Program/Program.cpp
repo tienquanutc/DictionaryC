@@ -1,8 +1,8 @@
 #include "Program.h"
 
 void Program::initMenu() {
-	_menu.addItem(MenuItem<Program>(this, &Program::exit, Language::MENU_EXIT));
-	_menu.addItem(MenuItem<Program>(this, &Program::allWords, Language::MENU_ALL_WORD));
+    _menu.addItem(MenuItem<Program>(this, &Program::exit, Language::MENU_EXIT));
+    _menu.addItem(MenuItem<Program>(this, &Program::allWords, Language::MENU_ALL_WORD));
     _menu.addItem(MenuItem<Program>(this, &Program::addWords, Language::MENU_ADD_WORD));
     _menu.addItem(MenuItem<Program>(this, &Program::updateWords, Language::MENU_UPDATE_WORD));
     _menu.addItem(MenuItem<Program>(this, &Program::findWords, Language::MENU_FIND_WORD));
